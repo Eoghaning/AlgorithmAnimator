@@ -1,0 +1,179 @@
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.footer {
+    background-color: var(--surface-color);
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ALGORITHMS OVERVIEW
+   ============================================ */
+
+.algorithms-overview {
+    padding: 5rem 0;
+    background-color: var(--surface-color);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.overview-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.overview-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.overview-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.sorting-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.searching-card {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.algorithm-list {
+    margin-bottom: 2rem;
+}
+
+.algorithm-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.algorithm-list li::before {
+    content: "\203A";
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   COMPLEXITY TABLE
+   ============================================ */
+
+.complexity-section {
+    padding: 5rem 0;
+    background-color: var(--background-color);
+}
+
+.complexity-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.complexity-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface-color);
+}
+
+.complexity-table th,
+.complexity-table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.complexity-table th {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.complexity-table td {
+    color: var(--text-secondary);
+}
+
+.complexity-table tr:hover td {
+    background-color: var(--card-bg);
+}
+
+/* ============================================
+   DESCRIPTION SECTION
+   ============================================ */
+
+.description-section {
+    padding: 4rem 0;
+    background-color: var(--surface-color);
+}
+
+.description-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.description-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.description-content h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-primary);
+}
+
+.description-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.code-block {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.code-block code {
+    color: var(--text-primary);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.step-list {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.step-list li {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}

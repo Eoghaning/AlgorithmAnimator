@@ -1,0 +1,234 @@
+/* ============================================
+   ALGORITHM PAGE STYLES
+   ============================================ */
+
+.page-header {
+    background: linear-gradient(135deg, var(--surface-color), var(--background-color));
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.page-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Algorithm Cards Grid */
+.algorithm-cards {
+    padding: 4rem 0;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.algorithm-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.algorithm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.algorithm-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.algorithm-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.algorithm-card .complexity-info {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.algorithm-card .complexity-info p {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+}
+
+.complexity-label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ============================================
+   VISUALIZATION AREA
+   ============================================ */
+
+.visualization-container {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+}
+
+.viz-area {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.array-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 400px;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.array-bar {
+    background: linear-gradient(180deg, var(--primary-color), var(--primary-dark));
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 30px;
+    position: relative;
+}
+
+.array-bar span {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-bottom: 4px;
+    position: absolute;
+    bottom: -25px;
+}
+
+.array-bar.comparing {
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+}
+
+.array-bar.swapping {
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+}
+
+.array-bar.sorted {
+    background: linear-gradient(180deg, #22c55e, #16a34a);
+}
+
+.array-bar.pivot {
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+}
+
+.array-bar.found {
+    background: linear-gradient(180deg, var(--secondary-color), #059669);
+    transform: scale(1.1);
+}
+
+/* Arrow indicators */
+.arrow-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    height: 30px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.arrow-indicator {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fbbf24;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.arrow-indicator.active {
+    opacity: 1;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.control-group label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.control-group input[type="range"] {
+    width: 120px;
+    accent-color: var(--primary-color);
+}
+
+.control-group input[type="number"] {
+    width: 80px;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+/* Statistics */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    word-break: break-all;
+}
+
+.stat-card .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
