@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching - Algorithm Animator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sorting.html">Sorting</a></li>
+                <li><a href="searching.html" class="active">Searching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Searching Algorithms</h1>
+            <p>Pick one and watch it find the target.</p>
+        </div>
+    </header>
+
+    <section class="algorithm-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="algorithm-card">
+                    <h3>Linear Search</h3>
+                    <p>Checks each item one by one. Simple.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(1) | <span class="complexity-label">Avg:</span> O(n) | <span class="complexity-label">Worst:</span> O(n)</p>
+                    </div>
+                    <a href="linear-search.html" class="btn btn-secondary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Binary Search</h3>
+                    <p>Cuts the list in half each time. Very fast.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(1) | <span class="complexity-label">Avg:</span> O(log n) | <span class="complexity-label">Worst:</span> O(log n)</p>
+                    </div>
+                    <a href="binary-search.html" class="btn btn-secondary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Exponential Search</h3>
+                    <p>Jumps forward then switches to binary. Good for big lists.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(1) | <span class="complexity-label">Avg:</span> O(log n) | <span class="complexity-label">Worst:</span> O(log n)</p>
+                    </div>
+                    <a href="exponential-search.html" class="btn btn-secondary">Visualize</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Algorithm Animator</p>
+    </footer>
+</body>
+</html>

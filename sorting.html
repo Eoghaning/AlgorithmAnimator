@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting - Algorithm Animator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sorting.html" class="active">Sorting</a></li>
+                <li><a href="searching.html">Searching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Sorting Algorithms</h1>
+            <p>Pick one and watch it sort the data.</p>
+        </div>
+    </header>
+
+    <section class="algorithm-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="algorithm-card">
+                    <h3>Bubble Sort</h3>
+                    <p>Compares neighbors and swaps. Simple but slow.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n) | <span class="complexity-label">Avg:</span> O(n^2) | <span class="complexity-label">Worst:</span> O(n^2)</p>
+                    </div>
+                    <a href="bubble-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Selection Sort</h3>
+                    <p>Finds the smallest, puts it first, repeats.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n^2) | <span class="complexity-label">Avg:</span> O(n^2) | <span class="complexity-label">Worst:</span> O(n^2)</p>
+                    </div>
+                    <a href="selection-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Insertion Sort</h3>
+                    <p>Builds the sorted list one item at a time.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n) | <span class="complexity-label">Avg:</span> O(n^2) | <span class="complexity-label">Worst:</span> O(n^2)</p>
+                    </div>
+                    <a href="insertion-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Merge Sort</h3>
+                    <p>Splits in half, sorts each, merges back. Reliable.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n log n) | <span class="complexity-label">Avg:</span> O(n log n) | <span class="complexity-label">Worst:</span> O(n log n)</p>
+                    </div>
+                    <a href="merge-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Quick Sort</h3>
+                    <p>Picks a pivot, arranges around it. Fast in practice.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n log n) | <span class="complexity-label">Avg:</span> O(n log n) | <span class="complexity-label">Worst:</span> O(n^2)</p>
+                    </div>
+                    <a href="quick-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+
+                <div class="algorithm-card">
+                    <h3>Heap Sort</h3>
+                    <p>Uses a heap structure. Consistent performance.</p>
+                    <div class="complexity-info">
+                        <p><span class="complexity-label">Best:</span> O(n log n) | <span class="complexity-label">Avg:</span> O(n log n) | <span class="complexity-label">Worst:</span> O(n log n)</p>
+                    </div>
+                    <a href="heap-sort.html" class="btn btn-primary">Visualize</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Algorithm Animator</p>
+    </footer>
+</body>
+</html>

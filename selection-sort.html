@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort - Algorithm Animator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sorting.html">Sorting</a></li>
+                <li><a href="searching.html"> Searching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Selection Sort</h1>
+            <p>Finds the smallest and puts it at the start.</p>
+        </div>
+    </header>
+
+    <section class="visualization-container">
+        <div class="container">
+            <div class="viz-area">
+                <div class="complexity-info" style="margin-bottom: 1rem;">
+                    <span class="complexity-label">Best:</span> O(n^2) | 
+                    <span class="complexity-label">Average:</span> O(n^2) | 
+                    <span class="complexity-label">Worst:</span> O(n^2)
+                </div>
+                
+                <div class="array-container" id="arrayContainer"></div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" id="startBtn" onclick="startSort()">Start</button>
+                    <button class="btn btn-secondary" id="pauseBtn" onclick="pauseSort()">Pause</button>
+                    <button class="btn btn-small" onclick="resetArray()">Reset</button>
+                    <button class="btn btn-small" onclick="generateRandomArray()">New</button>
+                    
+                    <div class="control-group">
+                        <label style="color: var(--text-secondary); font-size: 0.875rem;">Speed:</label>
+                        <div class="speed-buttons">
+                            <button class="speed-btn" onclick="setSpeed(1)">1</button>
+                            <button class="speed-btn" onclick="setSpeed(2)">2</button>
+                            <button class="speed-btn selected" onclick="setSpeed(3)">3</button>
+                            <button class="speed-btn" onclick="setSpeed(4)">4</button>
+                            <button class="speed-btn" onclick="setSpeed(5)">5</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="arraySize" style="color: var(--text-secondary); font-size: 0.875rem;">Size:</label>
+                        <input type="number" id="arraySize" min="5" max="30" value="15" onchange="resizeArray()">
+                    </div>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-value" id="comparisons">0</div>
+                        <div class="stat-label">Comparisons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="swaps">0</div>
+                        <div class="stat-label">Swaps</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="currentStep">0</div>
+                        <div class="stat-label">Step</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="status">Ready</div>
+                        <div class="stat-label">Status</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="container">
+            <div class="description-content">
+                <h2>How It Works</h2>
+                <p>Selection Sort splits the array into sorted and unsorted parts.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Algorithm Animator</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function setSpeed(level) {
+            const buttons = document.querySelectorAll('.speed-btn');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            buttons[level - 1].classList.add('selected');
+            const speeds = [500, 300, 100, 75, 30];
+            animationSpeed = speeds[level - 1];
+        }
+    </script>
+</body>
+</html>
