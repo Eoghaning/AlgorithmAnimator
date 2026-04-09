@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linear Search - Algorithm Animator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Binary Search - Algorithm Animator</title>
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <a href="../../index.html" class="logo">Algorithm<span>Animator</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sorting.html">Sorting</a></li>
-                <li><a href="searching.html" class="active"> Searching</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../sorting.html">Sorting</a></li>
+                <li><a href="../../searching.html" class="active">Searching</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1>Linear Search</h1>
-            <p>Checks each item one by one.</p>
+            <h1>Binary Search</h1>
+            <p>Keeps cutting the list in half until it finds the target.</p>
         </div>
     </header>
 
@@ -30,8 +30,8 @@
             <div class="viz-area">
                 <div class="complexity-info" style="margin-bottom: 1rem;">
                     <span class="complexity-label">Best:</span> O(1) | 
-                    <span class="complexity-label">Average:</span> O(n) | 
-                    <span class="complexity-label">Worst:</span> O(n)
+                    <span class="complexity-label">Average:</span> O(log n) | 
+                    <span class="complexity-label">Worst:</span> O(log n)
                 </div>
                 
                 <div class="controls" style="margin-bottom: 1rem;">
@@ -47,7 +47,7 @@
                     <button class="btn btn-secondary" id="startBtn" onclick="startSearch()">Find</button>
                     <button class="btn btn-small" id="pauseBtn" onclick="pauseSearch()">Pause</button>
                     <button class="btn btn-small" onclick="resetSearch()">Reset</button>
-                    <button class="btn btn-small" onclick="generateRandomArray()">New</button>
+                    <button class="btn btn-small" onclick="generateSortedArray()">New</button>
                     
                     <div class="control-group">
                         <label style="color: var(--text-secondary); font-size: 0.875rem;">Speed:</label>
@@ -62,7 +62,7 @@
                     
                     <div class="control-group">
                         <label for="arraySize" style="color: var(--text-secondary); font-size: 0.875rem;">Size:</label>
-                        <input type="number" id="arraySize" min="5" max="30" value="15" onchange="resizeArray()">
+                        <input type="number" id="arraySize" min="5" max="30" value="15" onchange="resizeSearchArray()">
                     </div>
                 </div>
 
@@ -74,6 +74,18 @@
                     <div class="stat-card">
                         <div class="stat-value" id="currentStep">0</div>
                         <div class="stat-label">Step</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="low">0</div>
+                        <div class="stat-label">Low</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="high">0</div>
+                        <div class="stat-label">High</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="mid">-</div>
+                        <div class="stat-label">Mid</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value" id="status">Ready</div>
@@ -88,7 +100,7 @@
         <div class="container">
             <div class="description-content">
                 <h2>How It Works</h2>
-                <p>Linear Search checks each element one by one until it finds the target.</p>
+                <p>Binary Search jumps to the middle, checks if that's the target. If not, it discards half the list and repeats.</p>
             </div>
         </div>
     </section>
@@ -97,15 +109,7 @@
         <p>Algorithm Animator</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        function setSpeed(level) {
-            const buttons = document.querySelectorAll('.speed-btn');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            buttons[level - 1].classList.add('selected');
-            const speeds = [2240, 1120, 560, 373, 280];
-            animationSpeed = speeds[level - 1];
-        }
-    </script>
+    <script src="../../js/core.js"></script>
+    <script src="../../js/searching.js"></script>
 </body>
 </html>

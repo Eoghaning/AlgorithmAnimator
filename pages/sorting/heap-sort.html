@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Search - Algorithm Animator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Heap Sort - Algorithm Animator</title>
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <a href="../../index.html" class="logo">Algorithm<span>Animator</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sorting.html">Sorting</a></li>
-                <li><a href="searching.html"> Searching</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../sorting.html" class="active">Sorting</a></li>
+                <li><a href="../../searching.html">Searching</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1>Binary Search</h1>
-            <p>Keeps cutting the list in half until it finds the target.</p>
+            <h1>Heap Sort</h1>
+            <p>Uses a heap structure. Consistent.</p>
         </div>
     </header>
 
@@ -29,25 +29,18 @@
         <div class="container">
             <div class="viz-area">
                 <div class="complexity-info" style="margin-bottom: 1rem;">
-                    <span class="complexity-label">Best:</span> O(1) | 
-                    <span class="complexity-label">Average:</span> O(log n) | 
-                    <span class="complexity-label">Worst:</span> O(log n)
-                </div>
-                
-                <div class="controls" style="margin-bottom: 1rem;">
-                    <div class="control-group">
-                        <label for="searchTarget" style="color: var(--text-secondary); font-size: 0.875rem;">Find:</label>
-                        <input type="number" id="searchTarget" placeholder="Number" min="1" max="100">
-                    </div>
+                    <span class="complexity-label">Best:</span> O(n log n) | 
+                    <span class="complexity-label">Average:</span> O(n log n) | 
+                    <span class="complexity-label">Worst:</span> O(n log n)
                 </div>
                 
                 <div class="array-container" id="arrayContainer"></div>
 
                 <div class="controls">
-                    <button class="btn btn-secondary" id="startBtn" onclick="startSearch()">Find</button>
-                    <button class="btn btn-small" id="pauseBtn" onclick="pauseSearch()">Pause</button>
-                    <button class="btn btn-small" onclick="resetSearch()">Reset</button>
-                    <button class="btn btn-small" onclick="generateSortedArray()">New</button>
+                    <button class="btn btn-primary" id="startBtn" onclick="startSort()">Start</button>
+                    <button class="btn btn-secondary" id="pauseBtn" onclick="pauseSort()">Pause</button>
+                    <button class="btn btn-small" onclick="resetArray()">Reset</button>
+                    <button class="btn btn-small" onclick="generateRandomArray()">New</button>
                     
                     <div class="control-group">
                         <label style="color: var(--text-secondary); font-size: 0.875rem;">Speed:</label>
@@ -62,14 +55,18 @@
                     
                     <div class="control-group">
                         <label for="arraySize" style="color: var(--text-secondary); font-size: 0.875rem;">Size:</label>
-                        <input type="number" id="arraySize" min="5" max="30" value="15" onchange="resizeSearchArray()">
+                        <input type="number" id="arraySize" min="5" max="30" value="15" onchange="resizeArray()">
                     </div>
                 </div>
 
                 <div class="stats-container">
                     <div class="stat-card">
                         <div class="stat-value" id="comparisons">0</div>
-                        <div class="stat-label">Checks</div>
+                        <div class="stat-label">Comparisons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="swaps">0</div>
+                        <div class="stat-label">Swaps</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value" id="currentStep">0</div>
@@ -88,7 +85,7 @@
         <div class="container">
             <div class="description-content">
                 <h2>How It Works</h2>
-                <p>Binary Search jumps to the middle, checks if that's the target. If not, it discards half the list and repeats.</p>
+                <p>Heap Sort builds a max heap and extracts the maximum element repeatedly.</p>
             </div>
         </div>
     </section>
@@ -97,15 +94,7 @@
         <p>Algorithm Animator</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        function setSpeed(level) {
-            const buttons = document.querySelectorAll('.speed-btn');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            buttons[level - 1].classList.add('selected');
-            const speeds = [2240, 1120, 560, 373, 280];
-            animationSpeed = speeds[level - 1];
-        }
-    </script>
+    <script src="../../js/core.js"></script>
+    <script src="../../js/sorting.js"></script>
 </body>
 </html>

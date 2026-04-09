@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heap Sort - Algorithm Animator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bubble Sort - Algorithm Animator</title>
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Algorithm<span>Animator</span></a>
+            <a href="../../index.html" class="logo">Algorithm<span>Animator</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sorting.html">Sorting</a></li>
-                <li><a href="searching.html"> Searching</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../sorting.html" class="active">Sorting</a></li>
+                <li><a href="../../searching.html">Searching</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1>Heap Sort</h1>
-            <p>Uses a heap structure. Consistent.</p>
+            <h1>Bubble Sort</h1>
+            <p>Compares neighbors and swaps them if needed.</p>
         </div>
     </header>
 
@@ -29,9 +29,9 @@
         <div class="container">
             <div class="viz-area">
                 <div class="complexity-info" style="margin-bottom: 1rem;">
-                    <span class="complexity-label">Best:</span> O(n log n) | 
-                    <span class="complexity-label">Average:</span> O(n log n) | 
-                    <span class="complexity-label">Worst:</span> O(n log n)
+                    <span class="complexity-label">Best:</span> O(n) | 
+                    <span class="complexity-label">Average:</span> O(n^2) | 
+                    <span class="complexity-label">Worst:</span> O(n^2)
                 </div>
                 
                 <div class="array-container" id="arrayContainer"></div>
@@ -81,28 +81,11 @@
         </div>
     </section>
 
-    <section class="description-section">
-        <div class="container">
-            <div class="description-content">
-                <h2>How It Works</h2>
-                <p>Heap Sort builds a max heap and extracts the maximum element repeatedly.</p>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <p>Algorithm Animator</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        function setSpeed(level) {
-            const buttons = document.querySelectorAll('.speed-btn');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            buttons[level - 1].classList.add('selected');
-            const speeds = [500, 300, 100, 75, 30];
-            animationSpeed = speeds[level - 1];
-        }
-    </script>
+    <script src="../../js/core.js"></script>
+    <script src="../../js/sorting.js"></script>
 </body>
 </html>

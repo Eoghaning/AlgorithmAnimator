@@ -1,95 +1,34 @@
-# AlgorithmAnimator
+# Algorithm Animator
 
-See how sorting and searching algorithms actually work. Watch them in action with step-by-step visualizations.
+A web-based tool to visualize common sorting and searching algorithms in action.
 
-## 🚀 How to Run Locally
+## Features
 
-### Option 1: Direct File Opening (Simplest)
-Double-click `index.html` to open it in your web browser.
+- **Sorting Algorithms:** Bubble Sort, Selection Sort, Insertion Sort, Quick Sort (with more coming soon).
+- **Searching Algorithms:** Linear Search, Binary Search.
+- **Interactive Controls:** Adjust array size, animation speed, and manually pause/resume the process.
+- **Audio Feedback:** Sound effects for comparisons, swaps, and completion.
+- **Real-time Stats:** Track comparisons, swaps, and steps as they happen.
 
-### Option 2: Using Python
-```bash
-python -m http.server 8000
-# Then visit http://localhost:8000
-```
+## Project Structure
 
-### Option 3: Using Node.js
-```bash
-npm install -g http-server
-http-server . -p 8000
-# Then visit http://localhost:8000
-```
+The project has been organized into a clean, modular directory structure:
 
-### Option 4: Using VS Code
-1. Install the "Live Server" extension
-2. Right-click on `index.html`
-3. Select "Open with Live Server"
+- `/css`: Contains consolidated `styles.css` for all pages.
+- `/js`: Modular JavaScript logic.
+  - `core.js`: Shared state, audio context, and UI utilities.
+  - `sorting.js`: Sorting algorithm implementations.
+  - `searching.js`: Searching algorithm implementations.
+- `/pages`: Algorithm-specific visualization pages.
+  - `/sorting`: Pages for Bubble, Quick, Merge, etc.
+  - `/searching`: Pages for Binary, Linear, etc.
+- `index.html`: The main landing page.
+- `sorting.html` & `searching.html`: Category hub pages.
 
----
+## How to Run
 
-## 📁 Project Structure
+Simply open `index.html` in any modern web browser. No local server or build step is required.
 
-```
-AlgorithmAnimator/
-├── index.html           # Homepage
-├── styles.css          # Styles
-├── script.js           # JavaScript animations
-├── sorting.html        # Sorting algorithms hub
-├── searching.html      # Searching algorithms hub
-├── about.html          # About page
-├── bubble-sort.html    # Bubble Sort
-├── binary-search.html  # Binary Search
-└── README.md           # This file
-```
+## License
 
----
-
-## 🎯 What You Can Do
-
-- **Watch algorithms in action** - See each step unfold
-- **Control the speed** - Slow down or speed up
-- **Track the stats** - See comparisons and swaps in real-time
-- **Try your own data** - Generate random arrays or adjust sizes
-
----
-
-## 📚 Algorithms Included
-
-### Sorting
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Merge Sort
-- Quick Sort
-- Heap Sort
-
-### Searching
-- Linear Search
-- Binary Search
-- Exponential Search
-
----
-
-## 🖥️ How to Use
-
-1. Go to the Sorting or Searching section
-2. Pick an algorithm to learn about
-3. Hit Start and watch it work
-4. Use Pause/Reset to control things
-5. Read the explanation below for more detail
-
----
-
-## 📖 Each Page Includes
-
-- Visual demo of the algorithm
-- Step-by-step explanation
-- Pseudocode
-- Time and space complexity
-- When to use the algorithm
-
----
-
-## 📝 License
-
-Built for educational purposes.
+MIT
