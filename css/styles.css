@@ -577,7 +577,7 @@ ul {
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
 }
 
@@ -586,13 +586,24 @@ ul {
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.stats-container .stat-card:last-child {
+    grid-column: span 2;
 }
 
 .stat-card .stat-value {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#status.stat-value {
+    font-size: 1.1rem;
 }
 
 .stat-card .stat-label {

@@ -231,7 +231,7 @@ function setSpeed(level) {
 
     const isSearching = window.location.pathname.toLowerCase().includes('search');
     if (isSearching) {
-        selectedSpeed *= 3;
+        selectedSpeed *= 9;
     }
 
     animationSpeed = selectedSpeed;
@@ -240,6 +240,7 @@ function setSpeed(level) {
 document.addEventListener('DOMContentLoaded', function() {
     const arrayContainer = document.getElementById('arrayContainer');
     if (arrayContainer) {
+        setSpeed(3);
         const pageName = window.location.pathname.toLowerCase();
         if (pageName.includes('search')) {
             generateSortedArray();
