@@ -1,7 +1,3 @@
-/**
- * Searching Algorithms for Algorithm Animator
- */
-
 async function startSearch() {
     initAudio();
     const targetInput = document.getElementById('searchTarget');
@@ -23,7 +19,6 @@ async function startSearch() {
         } else if (path.includes('linear-search')) {
             await linearSearchAnimation();
         } else {
-            // Default
             await binarySearchAnimation();
         }
     } else if (isPaused) {
@@ -39,9 +34,6 @@ function pauseSearch() {
     }
 }
 
-/**
- * Binary Search Implementation
- */
 async function binarySearchAnimation() {
     const bars = document.querySelectorAll('.array-bar');
     while (low <= high) {
@@ -79,9 +71,6 @@ async function binarySearchAnimation() {
     isRunning = false;
 }
 
-/**
- * Linear Search Implementation
- */
 async function linearSearchAnimation() {
     const bars = document.querySelectorAll('.array-bar');
     for (let i = 0; i < array.length; i++) {

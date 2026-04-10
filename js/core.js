@@ -1,11 +1,6 @@
-/**
- * Core Logic for Algorithm Animator
- * Contains global state, audio context, and UI utility functions.
- */
-
 let array = [];
 let originalArray = [];
-let animationSpeed = 100; // Default speed
+let animationSpeed = 100;
 let isRunning = false;
 let isPaused = false;
 let animationTimeout = null;
@@ -20,12 +15,8 @@ let low = 0;
 let high = 0;
 let mid = 0;
 
-// Audio Context for sound effects
 let audioContext = null;
 
-/**
- * Initializes the AudioContext on user interaction
- */
 function initAudio() {
     if (!audioContext) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -33,9 +24,6 @@ function initAudio() {
     return audioContext;
 }
 
-/**
- * Plays a beep sound
- */
 function playBeep(frequency, duration, type) {
     try {
         const ctx = initAudio();
@@ -50,11 +38,10 @@ function playBeep(frequency, duration, type) {
         oscillator.start(ctx.currentTime);
         oscillator.stop(ctx.currentTime + duration);
     } catch (e) {
-        // Silently fail if audio is blocked or unavailable
+        // Silently fail if audio is blocked
     }
 }
 
-// Pre-defined sounds for specific actions
 const playCompareSound = () => playBeep(400, 0.05, 'sine');
 const playSwapSound = () => playBeep(600, 0.08, 'square');
 const playSortedSound = () => {
@@ -67,9 +54,6 @@ const playFoundSound = () => {
     setTimeout(() => playBeep(784, 0.15, 'sine'), 200);
 };
 
-/**
- * Generates a new random array for sorting
- */
 function generateRandomArray() {
     const sizeInput = document.getElementById('arraySize');
     const size = parseInt(sizeInput.value) || 15;
@@ -82,9 +66,6 @@ function generateRandomArray() {
     renderArray();
 }
 
-/**
- * Generates a sorted array for searching
- */
 function generateSortedArray() {
     const sizeInput = document.getElementById('arraySize');
     const size = parseInt(sizeInput.value) || 15;
@@ -97,9 +78,6 @@ function generateSortedArray() {
     renderSearchArray();
 }
 
-/**
- * Resets the current array to its original state
- */
 function resetArray() {
     array = [...originalArray];
     resetStatistics();
@@ -121,9 +99,6 @@ function resizeSearchArray() {
     generateSortedArray();
 }
 
-/**
- * Renders the array as vertical bars
- */
 function renderArray() {
     const container = document.getElementById('arrayContainer');
     if (!container) return;
@@ -161,9 +136,6 @@ function renderSearchArray() {
     });
 }
 
-/**
- * Resets UI statistics for sorting
- */
 function resetStatistics() {
     comparisons = 0;
     swaps = 0;
@@ -186,9 +158,6 @@ function resetStatistics() {
     }
 }
 
-/**
- * Resets UI statistics for searching
- */
 function resetSearchStatistics() {
     comparisons = 0;
     currentStep = 0;
@@ -231,9 +200,6 @@ function updateSearchStatistics() {
     updateStatText('mid', mid >= 0 ? mid : '-');
 }
 
-/**
- * Helper for pausing animations
- */
 function sleep(ms) {
     return new Promise(resolve => {
         animationTimeout = setTimeout(resolve, ms);
@@ -253,22 +219,24 @@ function waitForResume() {
     });
 }
 
-/**
- * Updates the animation speed based on UI selection
- */
 function setSpeed(level) {
     const buttons = document.querySelectorAll('.speed-btn');
     if (buttons.length > 0) {
         buttons.forEach(btn => btn.classList.remove('selected'));
         if (buttons[level - 1]) buttons[level - 1].classList.add('selected');
     }
+    
     const speeds = [500, 300, 100, 75, 30];
-    animationSpeed = speeds[level - 1] || 100;
+    let selectedSpeed = speeds[level - 1] || 100;
+
+    const isSearching = window.location.pathname.toLowerCase().includes('search');
+    if (isSearching) {
+        selectedSpeed *= 3;
+    }
+
+    animationSpeed = selectedSpeed;
 }
 
-/**
- * Auto-initialization on page load
- */
 document.addEventListener('DOMContentLoaded', function() {
     const arrayContainer = document.getElementById('arrayContainer');
     if (arrayContainer) {

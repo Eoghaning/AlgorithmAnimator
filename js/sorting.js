@@ -1,7 +1,3 @@
-/**
- * Sorting Algorithms for Algorithm Animator
- */
-
 async function startSort() {
     initAudio();
     if (isSorted) {
@@ -29,7 +25,6 @@ async function startSort() {
             await quickSortAnimation(0, array.length - 1);
             finalizeSort();
         } else {
-            // Default or placeholder for other algorithms
             await bubbleSortAnimation();
         }
     } else if (isPaused) {
@@ -45,9 +40,6 @@ function pauseSort() {
     }
 }
 
-/**
- * Quick Sort Implementation
- */
 async function quickSortAnimation(start, end) {
     if (start >= end) return;
     
@@ -63,7 +55,7 @@ async function partition(start, end) {
     let pivotIndex = start;
     
     let bars = document.querySelectorAll('.array-bar');
-    bars[end].classList.add('swapping'); // Pivot bar
+    bars[end].classList.add('swapping');
     
     for (let i = start; i < end; i++) {
         if (isPaused) await waitForResume();
@@ -98,9 +90,6 @@ async function partition(start, end) {
     return pivotIndex;
 }
 
-/**
- * Bubble Sort Implementation
- */
 async function bubbleSortAnimation() {
     const n = array.length;
     for (let i = 0; i < n - 1; i++) {
@@ -143,9 +132,6 @@ async function bubbleSortAnimation() {
     finalizeSort();
 }
 
-/**
- * Selection Sort Implementation
- */
 async function selectionSortAnimation() {
     const n = array.length;
     for (let i = 0; i < n - 1; i++) {
@@ -189,9 +175,6 @@ async function selectionSortAnimation() {
     finalizeSort();
 }
 
-/**
- * Insertion Sort Implementation
- */
 async function insertionSortAnimation() {
     const n = array.length;
     for (let i = 1; i < n; i++) {
